@@ -14,7 +14,7 @@ const middleware = (req, res, next) => {
   
 
   if (!apiauthkey) {
-    return res.status(400).json({ 
+    return res.status(404).json({ 
    "error": "apiauthkey is missing or invalid"
 });
   }
@@ -37,7 +37,7 @@ app.post("/api/cart/addProduct", async (req,res)=>{
   const { userId, productId, count } = req.body;
 
   if (!userId || !productId || !count) {
-    return res.status(400).json({
+    return res.status(404).json({
       error: "Missing required fields"
     });
   }
