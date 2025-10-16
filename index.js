@@ -14,7 +14,7 @@ const middleware = (req, res, next) => {
   
 
   if (!apiauthkey) {
-    return res.status(404).json({ 
+    return res.status(403).json({ 
    "error": "apiauthkey is missing or invalid"
 });
   }
